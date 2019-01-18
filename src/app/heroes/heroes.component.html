@@ -7,9 +7,10 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-
 <!-- ^ [class.selected]="hero === selectedHero" is available through the 
 .selected scss class in this component. It changes / toggles the color
 of a selected list item 
 When the current row hero is the same as the selectedHero, Angular adds the selected CSS class. When the two heroes are different, Angular removes the class.
  -->
+
+ <app-hero-detail [hero]="selectedHero"></app-hero-detail>
