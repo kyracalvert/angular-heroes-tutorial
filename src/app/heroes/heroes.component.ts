@@ -21,9 +21,13 @@ export class HeroesComponent implements OnInit {
     private heroService: HeroService
   ) { }
 
-   // create a function to retrieve the heroes from the service.
-   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+  // create a function to retrieve the heroes from the service.
+  // the HeroService.getHeroes method used to return a Hero[].
+  // Now it returns an Observable<Hero[]>.
+  // we'll have to adjust to that difference in HeroesComponent.
+  getHeroes(): void {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
