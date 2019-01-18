@@ -1,5 +1,12 @@
-<!-- data binding hero property -->
-<h2>{{hero.name | uppercase}} Details</h2>
-<div><span>id: </span>{{hero.id}}</div>
-<div><span>id: </span>{{hero.name}}</div>
+<!-- sets up two-way data binding -->
+<!-- ngModel is an Angular two-way binding syntax -->
+<!-- ngModel belongs to the optional FormsModule and we must opt-in 
+to use it -->
+<div>
+  <label>
+    name:
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
+
 
